@@ -1,0 +1,44 @@
+.container {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.imgWrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.desc {
+  font-size: 14px;
+  text-align: center;
+}
+
+.price {
+  font-size: 20px;
+}
+
+.otherText {
+  font-size: 12px;
+}

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+.left {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 42px;
+}
+
+.imgWrapper {
+  position: relative;
+  width: 100vw;
+  height: 600px;
+}
