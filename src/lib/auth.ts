@@ -28,6 +28,8 @@ export const {
               image: profile?.avatar_url,
             });
             await newUser.save();
+          } else {
+            return true;
           }
         } catch (err) {
           console.log("err", err);

@@ -13,15 +13,24 @@
 
 .loginBox {
   width: 500px;
-  height: 350px;
   display: flex;
   gap: 20px;
+  height: fit-content;
   flex-direction: column;
   align-items: center;
   padding: 30px;
   border: 1px solid lightslategray;
   background-color: var(--secondary);
   border-radius: 10px;
+}
+
+.form {
+  width: 500px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
 }
 
 .input {
