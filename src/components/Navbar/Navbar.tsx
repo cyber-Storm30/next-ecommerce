@@ -5,11 +5,16 @@ import styles from "./navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
   const cart = useSelector((state: any) => state.cart.cart);
   const pathname = usePathname();
+  const router = useRouter();
+  const handleNavigate = (val: string) => {
+    console.log(`/${val}`);
+    router.push(`/${val}`);
+  };
   const links = [
     {
       title: "MEN",
@@ -75,7 +80,23 @@ const Navbar = () => {
       </div>
       <div className={styles.rightContainer}>
         {pathname === "/login" || pathname === "/signup" ? (
-          <button className={styles.signupButton}>Singup</button>
+          <div>
+            {pathname === "/login" ? (
+              <button
+                className={styles.signupButton}
+                onClick={() => handleNavigate("signup")}
+              >
+                Singup
+              </button>
+            ) : (
+              <button
+                className={styles.signupButton}
+                onClick={() => handleNavigate("login")}
+              >
+                Login
+              </button>
+            )}
+          </div>
         ) : (
           <div className={styles.options}>
             {options?.map((data, idx) => (
@@ -84,7 +105,7 @@ const Navbar = () => {
                   <Link href={data.path}>
                     <Image src={data.logo} alt="" fill />
                     {data.path === "/bag" && (
-                      <div className={styles.badge}>{cart.length - 1}</div>
+                      <div className={styles.badge}>{cart.length}</div>
                     )}
                   </Link>
                 </div>

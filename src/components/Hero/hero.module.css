@@ -15,8 +15,12 @@
   font-size: 42px;
 }
 
+.carousel {
+  width: 100vw;
+}
+
 .imgWrapper {
   position: relative;
-  width: 100vw;
-  height: 600px;
+  height: 500px;
+  object-fit: contain;
 }

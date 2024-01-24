@@ -5,7 +5,7 @@
   padding-left: 30px;
   gap: 500px;
   height: 120px;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   -webkit-box-shadow: -1px 11px 21px -12px rgba(156, 156, 156, 1);
   -moz-box-shadow: -1px 11px 21px -12px rgba(156, 156, 156, 1);
   box-shadow: -1px 11px 21px -12px rgba(156, 156, 156, 1);
@@ -108,12 +108,12 @@
   height: 30px;
   border-radius: 10px;
   outline: none;
-  border: 1px solid var(--btnAlt);
-  background-color: var(--btn);
+  border: none;
+  background-color: var(--bgDark);
   cursor: pointer;
+  color: rgb(197, 197, 197);
 }
 
 .signupButton:hover {
-  background-color: var(--btnAlt);
   color: var(--primary);
 }

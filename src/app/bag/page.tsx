@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./bag.module.css";
 import CartItem from "@/components/CartItem/CartItem";
 import { useSelector } from "react-redux";
+import OrderSummary from "@/components/OrderSummary/OrderSummary";
 
 const Bag = () => {
   const cart = useSelector((state: any) => state.cart.cart);
@@ -13,10 +14,13 @@ const Bag = () => {
         <p>PRODUCT</p>
         <p>TOTAL</p>
       </div>
-      <div className={styles.items}>
-        {cart?.map((data: any, idx: number) => (
-          <>{data?._id ? <CartItem data={data} /> : <></>}</>
-        ))}
+      <div className={styles.itemsWrapper}>
+        <div className={styles.items}>
+          {cart?.map((data: any, idx: number) => (
+            <>{data?._id ? <CartItem data={data} /> : <></>}</>
+          ))}
+        </div>
+        {cart?.length > 0 && <OrderSummary />}
       </div>
     </div>
   );

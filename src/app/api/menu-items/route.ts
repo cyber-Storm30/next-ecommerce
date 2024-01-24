@@ -3,6 +3,7 @@ import { MenuItem } from "@/models/MenuItem";
 
 export const POST = async (req: any) => {
   try {
+    // FIXME:fix something
     await dbConnect();
     const data = await req.json();
     const menuItem = await MenuItem.create(data);
@@ -15,6 +16,7 @@ export const POST = async (req: any) => {
 
 export const GET = async (req: any) => {
   try {
+    //TODO:optimise the code
     await dbConnect();
     const url = req.url;
     const query = url.split("=")[1];

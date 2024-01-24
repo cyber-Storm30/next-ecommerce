@@ -4,4 +4,6 @@
   gap: 10px;
   display: flex;
   justify-content: center;
+  background-color: var(--primary);
+  height: 100vh;
 }

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Demo tour",
+  "steps": [
+    {
+      "file": "src/app/page.tsx",
+      "description": "Start of my tour",
+      "line": 11
+    },
+    {
+      "file": "src/app/page.tsx",
+      "description": "This is my second component",
+      "line": 12
+    }
+  ],
+  "ref": "main"
+}

@@ -30,7 +30,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
       <div className={styles.item}>
         <p className={styles.title}>{truncatedTitle}</p>
         {/* <p className={styles.desc}>{truncatedText}</p> */}
-        <p className={styles.price}>${basePrice}</p>
+        <p className={styles.price}>₹{basePrice}</p>
         <p className={styles.otherText}>FREE Delivery</p>
       </div>
     </div>

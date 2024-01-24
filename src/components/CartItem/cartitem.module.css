@@ -1,15 +1,16 @@
 .container {
-  width: 70vw;
-  border: 1px solid lightgray;
+  width: 900px;
+  border: 1px solid rgb(62, 62, 62);
   display: flex;
   gap: 30px;
   padding: 20px;
+  background-color: var(--primary);
 }
 
 .imgWrapper {
   position: relative;
-  width: 45%;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 }
 
 .wrapper {

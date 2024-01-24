@@ -25,14 +25,15 @@ interface SingleItemProps {
 
 const SingleItem: React.FC<SingleItemProps> = ({ slug }) => {
   const [item, setItem] = useState<MyItemProps>();
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState("S");
   const dispatch = useDispatch();
   const handleIncreaseQuantity = () => {
     setQuantity(quantity + 1);
   };
 
   const handleDecreaseQuantity = () => {
-    if (quantity > 0) {
+    if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
@@ -46,17 +47,38 @@ const SingleItem: React.FC<SingleItemProps> = ({ slug }) => {
     }
   };
 
+  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log(e.target.value);
+    setSize(e.target.value);
+  };
+
   useEffect(() => {
     getSingleItemData();
   }, []);
 
   const handleAddToCart = () => {
-    dispatch(addToCart(item));
+    const newItem = {
+      _id: item?._id,
+      image: item?.image,
+      name: item?.name,
+      desc: item?.desc,
+      basePrice: item?.basePrice,
+      quantity,
+      size,
+    };
+    dispatch(addToCart(newItem));
   };
   return (
     <div className={styles.container}>
-      <div className={styles.imgContainer}>
-        <Image src={item?.image as string} fill className={styles.img} alt="" />
+      <div className={styles.leftContainer}>
+        <div className={styles.imgContainer}>
+          <Image
+            src={item?.image as string}
+            fill
+            className={styles.img}
+            alt=""
+          />
+        </div>
       </div>
       <div className={styles.details}>
         <p className={styles.title}>{item?.name}</p>
@@ -82,12 +104,17 @@ const SingleItem: React.FC<SingleItemProps> = ({ slug }) => {
             +
           </button>
         </div>
-        <select name="sizes" id="sizes" className={styles.sizeSelect}>
+        <select
+          name="sizes"
+          id="sizes"
+          className={styles.sizeSelect}
+          onChange={handleSelect}
+        >
           {item?.sizes.map((data, idx) => (
             <option value={data}>{data}</option>
           ))}
         </select>
-        <p className={styles.price}>{item?.basePrice.toString()}</p>
+        <p className={styles.price}>₹{item?.basePrice.toString()}</p>
         <button className={styles.buyButton} onClick={handleAddToCart}>
           Add to bag
         </button>

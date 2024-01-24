@@ -1,9 +1,9 @@
 :root {
-  --bg: #ffffff;
   --bgDark: #141414;
-  --text: #141414;
+  --text: #ffffff;
   --textAlt: #e5e5e5;
-  --primary: #ffffff;
+  --primary: #141414;
+  --secondary: #313131;
   --gray: #ececec;
   --btnAlt: #005ce6;
   --btn: #66a3ff;
