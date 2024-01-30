@@ -13,10 +13,14 @@ interface CartItem {
 
 interface CartItemSlice {
   cart: CartItem[];
+  shipping: {};
+  paymentMethod: "";
 }
 
 const initialState: CartItemSlice = {
   cart: [],
+  shipping: {},
+  paymentMethod: "",
 };
 
 export const cartSlice = createSlice({
@@ -47,9 +51,21 @@ export const cartSlice = createSlice({
     clearCart: (state, action) => {
       console.log("clear cart");
     },
+    addShippingDetails: (state, action) => {
+      state.shipping = action.payload;
+    },
+    addPaymentMethod: (state, action) => {
+      state.paymentMethod = action.payload;
+    },
   },
 });
 
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  clearCart,
+  addPaymentMethod,
+  addShippingDetails,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

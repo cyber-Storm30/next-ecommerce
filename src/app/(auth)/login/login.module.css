@@ -24,26 +24,6 @@
   border-radius: 10px;
 }
 
-.input {
-  width: 90%;
-  height: 40px;
-  padding-left: 20px;
-  border-radius: 5px;
-  border: 1px solid var(--bgDark);
-  outline: var(--bgDark);
-}
-
-.button {
-  width: 150px;
-  height: 40px;
-  border-radius: 7px;
-  background-color: var(--bgDark);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  color: rgb(197, 197, 197);
-}
-
 .socials {
   display: flex;
   gap: 20px;

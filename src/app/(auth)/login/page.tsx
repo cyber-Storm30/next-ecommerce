@@ -2,23 +2,19 @@ import React from "react";
 import styles from "./login.module.css";
 import Image from "next/image";
 import { auth, signIn } from "@/lib/auth";
+import { handleGithubLogin, login } from "@/lib/actions";
+import LoginForm from "@/components/LoginForm/LoginForm";
 
 const Login = async () => {
   const session = await auth();
 
-  const handleGithubLogin = async () => {
-    "use server";
-    const res = await signIn("github");
-    console.log("res", res);
-  };
+  console.log("Session in login", session);
 
   return (
     <div className={styles.container}>
       <div className={styles.loginBox}>
         <p className={styles.title}>Login</p>
-        <input placeholder="Enter your email" className={styles.input} />
-        <input placeholder="Enter your password" className={styles.input} />
-        <button className={styles.button}>Login</button>
+        <LoginForm />
         <div className={styles.socials}>
           <form action={handleGithubLogin}>
             <button className={styles.img}>

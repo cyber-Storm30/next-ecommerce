@@ -43,3 +43,20 @@
   cursor: pointer;
   color: #b0b0b0;
 }
+
+.Optioncontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.radio {
+  background-color: var(--secondary);
+  width: 25px;
+  height: 25px;
+}
+
+.Optiontitle {
+  font-size: 14px;
+}
