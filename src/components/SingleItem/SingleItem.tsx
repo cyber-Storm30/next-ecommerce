@@ -38,21 +38,20 @@ const SingleItem: React.FC<SingleItemProps> = ({ slug }) => {
     }
   };
 
-  const getSingleItemData = async () => {
-    try {
-      const res = await axios.get(`/api/menu-items/${slug}`);
-      setItem(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     console.log(e.target.value);
     setSize(e.target.value);
   };
 
   useEffect(() => {
+    const getSingleItemData = async () => {
+      try {
+        const res = await axios.get(`/api/menu-items/${slug}`);
+        setItem(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
     getSingleItemData();
   }, []);
 
@@ -111,7 +110,9 @@ const SingleItem: React.FC<SingleItemProps> = ({ slug }) => {
           onChange={handleSelect}
         >
           {item?.sizes.map((data, idx) => (
-            <option value={data}>{data}</option>
+            <option value={data} key={idx}>
+              {data}
+            </option>
           ))}
         </select>
         <p className={styles.price}>₹{item?.basePrice.toString()}</p>
