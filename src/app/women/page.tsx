@@ -38,6 +38,7 @@ const Women = () => {
     <div className={styles.container}>
       {menuItems?.map((data, idx) => (
         <MenuItem
+          key={idx}
           onClick={handleOnClick}
           name={data?.name}
           image={data?.image}

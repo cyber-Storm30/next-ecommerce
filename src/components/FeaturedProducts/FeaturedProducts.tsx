@@ -39,6 +39,7 @@ const FeaturedProducts = () => {
       <div className={styles.itemWrapper}>
         {items?.map((data, idx) => (
           <MenuItem
+            key={idx}
             onClick={handleOnClick}
             name={data?.name}
             image={data?.image}

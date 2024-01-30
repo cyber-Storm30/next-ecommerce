@@ -52,7 +52,7 @@ const PaymentMode = () => {
       <p className={styles.title}>Payment Method</p>
       <div className={styles.optionWrapper}>
         {options.map((data, idx) => (
-          <div className={styles.Optioncontainer}>
+          <div className={styles.Optioncontainer} key={idx}>
             <p className={styles.Optiontitle}>{data.title}</p>
             <input
               type="radio"
