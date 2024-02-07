@@ -15,7 +15,7 @@ const Login = async () => {
       <div className={styles.loginBox}>
         <p className={styles.title}>Login</p>
         <LoginForm />
-        <div className={styles.socials}>
+        {/* <div className={styles.socials}>
           <form action={handleGithubLogin}>
             <button className={styles.img}>
               <Image src="/github.png" fill alt="" />
@@ -27,7 +27,7 @@ const Login = async () => {
           <div className={styles.img}>
             <Image src="/facebook.png" fill alt="" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 export const authConfig = {
-  site: "https://next-ecommerce-gilt-eight.vercel.app/",
   pages: {
     signIn: "/login",
   },
